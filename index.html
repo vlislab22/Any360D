@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=0.2">
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Any360D">
+  <meta name="keywords" content="Monocular 360 Depth Estimation">
+  <title>Any360D</title>
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/Logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Any360D: 
+            </h1>
+          <h1 class="title is-1 publication-title">
+            Towards 360 Depth Anything with Unlabeled 360 Data and Möbius Spatial Augmentation</h1>
+
+          <div class="is-size-4 publication-authors">
+            <br>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=q1FcZzIAAAAJ&hl=zh-CN">Zidong Cao</a><sup>1</sup></a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp  
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=EVpo9eQAAAAJ&hl=zh-CN">Jinjing Zhu</a><sup>1*;</sup></a>&nbsp</a>&nbsp</a>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=cdtgqkgAAAAJ&hl=zh-CN">Weiming Zhang</a><sup>1*</sup></a>&nbsp</a>&nbsp</a>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=SReb2csAAAAJ&hl=zh-CN">Lin Wang</a><sup>1,2&dagger;</sup></a>&nbsp</a>&nbsp</a>&nbsp
+            </span>
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block"><sup>1</sup>AI Thrust, HKUST(GZ)</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp </span>
+            <span class="author-block"><sup>2</sup>Dept. of CSE, HKUST</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp </span>
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">* Equal contribution</span></a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp</a>&nbsp
+            <span class="author-block">&dagger; Corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://vlislab22.github.io/vlislab/" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-share-square"></i>
+                  </span>
+                  <span>Lab</span>
+                </a>
+              </span>
+            </div>
+          </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" width="100%" src="./image/teaser.png"/>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small" style="margin-top: 30px; padding-top: 0px;">
+  <h2 class="title is-4" style="text-align: center;">Comparison between Depth Anything Model (DAM) and our Any360D</h2>
+  <div class="hero-body">
+    
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="image/demo_1.jpg" alt="Steve GIF" width="100%">
+        </div>
+
+        <div class="item item-steve">
+          <img src="image/demo_2.jpg" alt="Steve GIF" width="100%">
+        </div>
+
+        <div class="item item-steve">
+          <img src="image/demo_3.jpg" alt="Steve GIF" width="100%">
+        </div>
+
+        <div class="item item-steve">
+          <img src="image/demo_4.jpg" alt="Steve GIF" width="100%">
+        </div>
+
+        <div class="item item-steve">
+          <img src="image/demo_5.jpg" alt="Steve GIF" width="100%">
+        </div>
+
+        <div class="item item-steve">
+          <img src="image/demo_6.jpg" alt="Steve GIF" width="100%">
+        </div>
+        
+        <div class="item item-steve">
+          <img src="image/demo_7.jpg" alt="Steve GIF" width="100%">
+        </div>
+
+        <div class="item item-steve">
+          <img src="image/demo_8.jpg" alt="Steve GIF" width="100%">
+        </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section"  style="margin-top: 0; padding-top: 50px;">
+  <h2 class="title is-4" style="text-align: center;">360 Depth Visualization on Videos</h2>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <video poster="" id="ade" autoplay controls muted loop playsinline style="width: 90%; display: block; margin: auto;">
+          <source src="video/demo_1.mov"
+                  type="video/mp4">
+        </video>
+        <video poster="" id="ade" autoplay controls muted loop playsinline style="width: 90%; display: block; margin: auto;">
+            <source src="video/demo_2.mov"
+                    type="video/mp4">
+          </video>
+          <video poster="" id="ade" autoplay controls muted loop playsinline style="width: 90%; display: block; margin: auto;">
+            <source src="video/demo_3.mov"
+                    type="video/mp4">
+          </video>
+          <video poster="" id="ade" autoplay controls muted loop playsinline style="width: 90%; display: block; margin: auto;">
+            <source src="video/demo_4.mov"
+                    type="video/mp4">
+          </video>
+          <video poster="" id="ade" autoplay controls muted loop playsinline style="width: 90%; display: block; margin: auto;">
+            <source src="video/demo_5.mov"
+                    type="video/mp4">
+          </video>
+          <video poster="" id="ade" autoplay controls muted loop playsinline style="width: 90%; display: block; margin: auto;">
+            <source src="video/demo_6.mov"
+                    type="video/mp4">
+          </video>   
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section" style="background-color:#efeff081"> -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recently, Depth Anything Model (DAM) reveals impressive zero-shot capacity for diverse perspective images. Despite its success, it remains an open question regarding DAM's performance on 360 images that enjoy a large field-of-view (180°×360°) but suffer from spherical distortions. To this end, we establish, to our knowledge, the first benchmark that aims to 1) evaluate the performance of DAM on 360 images and 2) develop a powerful 360 DAM for the benefit of the community. For this, we conduct a large suite of experiments that consider the key properties of 360 images, e.g., different 360 representations, various spatial transformations, and diverse indoor and outdoor scenes. This way, our benchmark unveils some key findings, e.g., DAM is less effective for diverse 360 scenes and sensitive to spatial transformations. To address these challenges, we first collect a large-scale unlabeled dataset including diverse indoor and outdoor scenes. We then propose a semi-supervised learning (SSL) framework to learn a 360 DAM, dubbed Any360D. Under the umbrella of SSL, Any360D first learns a teacher model by fine-tuning DAM via metric depth supervision. Then, we train the student model by uncovering the potential of large-scale unlabeled data with pseudo labels from the teacher model. Möbius transformation-based spatial augmentation (MTSA) is proposed to impose consistency regularization between the unlabeled data and spatially transformed ones. This subtly improves the student model's robustness to various spatial transformations even under severe distortions. Extensive experiments demonstrate that Any360D outperforms DAM and many prior data-specific models, e.g., PanoFormer, across diverse scenes, showing impressive zero-shot capacity for being a 360 depth foundation model.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4" style="text-align: center;">Utilized Data</h2>
+          <div class="content has-text-justified">
+            <p>
+              Training set of Matterport3D dataset (7829 RGB-D 360 images); Training set of ZInD dataset (54034 360 images); Our Diverse360 dataset (12063 360 images). Below is the samples of our Diverse360 dataset at a campus level</b>.
+            </p>
+          </div>
+
+          <div class="image-area">
+            <img src="image/D360.png" alt="pipeline" width="80%" class="center">
+          </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4" style="text-align: center;">Benchmarking Depth Anything Model</h2>
+          <div class="content has-text-justified">
+            <p>
+              We benchmark Depth Anything Model (DAM) on 360 images, including 360 image representations, 360 spatial transformations, and different backbone model sizes, etc.
+            </p>
+          </div>
+
+          <div class="image-area">
+            <figure>
+              <img src="image/Benchmark_Visual.png" alt="pipeline" width="100%">
+            </figure>
+          </div>
+                    
+          <div class="image-area">
+            <figure>
+              <img src="image/benchmark.png" alt="pipeline" width="100%">
+            </figure>
+          </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4" style="text-align: center;">Visualization of the 360 spatial transformation</h2>
+          <div class="content has-text-justified">
+            <p>
+              It is achieved with Möbius transformation, which is the only conformal transformation that can be applied to the sphere. The visualization of the 360 spatial transformation is shown below, including vertical rotation and zoom.
+            </p>
+          </div>
+
+          <div class="image-area">
+            <img src="image/mobius_sample.png" alt="pipeline" width="100%">
+          </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4" style="text-align: center;">Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            The semi-supervised learning framework of our Any360D is shown below. 
+          </p>
+        </div>
+
+        <div class="image-area">
+          <img src="image/Any360D.png" alt="pipeline" width="100%">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4" style="text-align: center;">Comparison with SOTA monocular 360 depth estimation methods</h2>
+        <div class="content has-text-justified">
+          <p>
+            The quantitative comparison with SOTA monocular 360 depth estimation methods is shown below.
+          </p>
+        </div>
+
+        <div class="image-area">
+          <img src="image/comparison.png" alt="pipeline" width="100%">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section pt-0" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-4">Citation</h2>
+    <pre class="selectable"><code>@inproceedings{depthanything,
+  title={Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data},
+  author={Yang, Lihe and Kang, Bingyi and Huang, Zilong and Xu, Xiaogang and Feng, Jiashi and Zhao, Hengshuang},
+  booktitle={CVPR},
+  year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2401.10891.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/LiheYoung/Depth-Anything" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="content">
+        <p>
+          The template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
